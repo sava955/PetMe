@@ -1,0 +1,42 @@
+@import 'variables';
+
+
+nav {
+      
+  
+    .bwm-search {
+      height: 50px;
+      width: 300px;
+    }
+  
+  
+    .navbar-brand img {
+      width: 100px;
+      height: auto;
+    }
+  
+  
+    .nav-item {
+      font-size: 14px;
+      color: $main-color;
+      position: relative;
+      .nav-link:before {
+        content: '';
+        width: 0;
+        height: 3px;
+        background-color: $main-color;
+        position: absolute;
+        top: 70%;
+        left: 0;
+        transition: .5s;
+      }
+
+    }
+    
+    .nav-item:hover a:before {
+      width: 40%;
+      transform: translateX(100%);
+    }
+    
+  
+}
