@@ -1,21 +1,43 @@
-<nav class="navbar navbar-expand-sm white">
+<nav class="navbar navbar-expand-sm white fixed-top">
     <div class="container">
-        <!-- Brand/logo -->
-        <a class="navbar-brand" href="#"><img src="../../../assets/images/logo.png" alt=""></a>
-        <!-- Links -->
+        <a class="navbar-brand" routerLink="/"><img src="../../../assets/images/logo.png" alt=""></a>
         <ul class="navbar-nav ml-auto flex-row">
             <li class="nav-item">
-                <form class="form-inline waves-light ml-auto" mdbWavesEffect>
+                <!--form class="form-inline waves-light ml-auto" mdbWavesEffect>
                     <div class="md-form my-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Pretraga">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Pretraga" aria-label="Number"
+                            matInput [formControl]="myControl" [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                                {{option.username}}
+                            </mat-option>
+                        </mat-autocomplete>
                     </div>
-                </form>
+                </form-->
+                <!--form class="example-form form-inline waves-light" mdbWavesEffect>
+                    <mat-form-field class="example-full-width">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                      <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                          {{option}}
+                        </mat-option>
+                      </mat-autocomplete>
+                    </mat-form-field>
+                  </form-->
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
+            <ng-container *ngIf="!auth.isAuthenticated()">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/auth/login">Prijava</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/auth/register">Registracija</a>
+                </li>
+            </ng-container>
+            <li *ngIf="auth.isAuthenticated()" class="nav-item">
+                <a class="nav-link">{{auth.getUsername()}}</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Registracija</a>
+            <li *ngIf="auth.isAuthenticated()" class="nav-item">
+                <a class="nav-link" (click)="logout()">Logout</a>
             </li>
         </ul>
     </div>

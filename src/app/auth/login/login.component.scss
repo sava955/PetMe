@@ -1,0 +1,23 @@
+@import 'variables';
+
+.container {
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+    transform: translateY(20%);
+
+    i {
+        color: $main-color;
+    }
+
+    .btn {
+        width: 100%;
+        margin: auto;
+        background: linear-gradient(to right, #5DD8B4, #0485A9);
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        padding: 10px;
+    }
+      
+  }

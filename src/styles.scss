@@ -1,6 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'variables';
+@import 'ad-detail';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
 html, body, p {
     color: $main-text-color;
+}
+
+.register {
+
+    .title {
+        padding-bottom: 20px;
+    }
+
+    .input-group-text {
+        color: $white;
+        background: $gradient;
+    }
+
+    .btn {
+        width: 100%;
+        margin: auto;
+        background: $gradient;
+        color: $white;
+        border: none;
+        border-radius: 20px;
+        padding: 10px;
+    }
+}
+
+.inline {
+    display: inline-block;
+}
+
+.editable-component {
+    a {
+        &editable-btn {
+            background: transparent;
+            
+            i {
+                font-size: 20px;
+            }
+        }
+    }
 }

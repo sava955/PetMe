@@ -1,0 +1,49 @@
+@import 'variables';
+
+    .row {
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+        margin: 10px;
+        background: linear-gradient(to right, $main-color, $white, $white);
+        border-radius: 10px;
+    
+        .col-md-6 {
+            max-height: 150px;
+        }
+    
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    
+        .card-subtitle {
+            margin-top: 5px;
+            color: $main-color;
+        }
+    
+        .title {
+            font-weight: 700;
+            color: $main-text-color;
+        }
+
+        .card-text {
+            color: $main-text-color;
+        }
+    
+    }
+
+
+p {
+    text-align: center;
+}
+
+.btn {
+    background: $gradient;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 15px;   
+}
+
+.fas {
+    color: $white;
+}

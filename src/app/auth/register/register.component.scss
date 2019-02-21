@@ -1,0 +1,34 @@
+@import 'variables';
+
+#accType {
+    transform: translateY(10%);
+
+    .col-md-4 {
+        transition: transform 1s;
+        margin: auto;
+
+        .card-title {
+            padding-top: 20px;
+        }
+
+        .card-body {
+            text-align: center;
+
+            span {
+                font-size: 8em;
+              }
+              
+              .fa {
+                color: $main-color-light;
+              }
+          }
+        
+      }
+      
+      .col-md-4:hover {
+        transform: scale(1.1, 1.1);
+        cursor: pointer;
+      }
+
+      
+  }
