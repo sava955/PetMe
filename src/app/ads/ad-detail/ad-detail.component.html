@@ -1,0 +1,41 @@
+<section id="adDetails" *ngIf="ad" class="container">
+  <div class="upper-section">
+    <div class="row">
+      <div class="col-md-6">
+          <img id="avatar" src="../../../assets/images/avatar.png" alt="">
+            <span id="avatar-name">{{ad.shelter.username}}</span>
+          <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+      </div>
+      <div class="col-md-6">
+        <div class="ad">
+          <div id="urgent">
+              <h5 class="ad-urgent text-capitalize {{ad.name}}">{{ad.isUrgent ? 'Hitno!' : ''}}</h5>
+          </div> 
+          <h5 class="ad-title text-capitalize">{{ad.title}}</h5>
+          <h5 class="ad-name text-capitalize">{{ad.name}}</h5>
+          <h5 class="ad-city text-capitalize">{{ad.city}}, {{ad.street}}</h5>
+          <div class="ad-info">
+            <span class="text-capitalize"><i class="fa fa-{{ad.category}}"></i> {{ad.category}}</span>
+            <span class="text-capitalize"><i class="fa fa-calendar"></i> {{ad.age}}</span>
+            <span class="text-capitalize">{{ad.gender}}</span>
+          </div>
+          <p class="ad-description">
+            {{ad.description}}
+          </p>
+          <hr>
+          <btn mdbBtn class="btn waves-light" size="md" mdbWavesEffect>Udomi</btn>
+        </div>
+        <app-map [location]="ad.city + ' '+ ad.street"></app-map>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="map-section">
+    <div class="row">
+      <div class="col-md-8">
+        
+      </div>
+    </div>
+  </div>
+</section>
+

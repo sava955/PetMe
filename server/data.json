@@ -1,0 +1,94 @@
+{
+    "ads": [
+    {
+      "title": "Potreban novi vlasnik",
+      "name": "Kuca",
+      "gender": "mužijak",
+      "age": 4,
+      "city": "Beograd",
+      "street": "Ustanička",
+      "category": "dog",
+      "image": "../../../assets/images/dog4.jpeg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis tortor in mauris commodo ultricies.",
+      "isUrgent": false
+    },
+    {
+      "title": "Hitno podreban novi dom",
+      "name": "Ker",
+      "gender": "mužijak",
+      "age": 2,
+      "city": "Beograd",
+      "street": "Dorćol",
+      "category": "dog",
+      "image": "../../../assets/images/dog6.jpeg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis tortor in mauris commodo ultricies.",
+      "isUrgent": true
+    },
+    {
+      "title": "Što pre udomiti",
+      "name": "Tom",
+      "gender": "mužijak",
+      "age": 2,
+      "city": "Novi Sad",
+      "street": "Detelinara",
+      "category": "cat",
+      "image": "../../../assets/images/dog7.jpeg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis tortor in mauris commodo ultricies.",
+      "isUrgent": true
+    },
+    {
+      "title": "U potrazi za kućom",
+      "name": "Milos",
+      "gender": "ženka",
+      "age": 5,
+      "city": "Užice",
+      "street": "Jug Bogdanova",
+      "category": "dog",
+      "image": "../../../assets/images/dog3.jpeg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis tortor in mauris commodo ultricies.",
+      "isUrgent": false
+    },
+    {
+      "title": "Napušten pas",
+      "name": "Marko",
+      "gender": "ženka",
+      "age": 3,
+      "city": "Valjevo",
+      "street": "Karađorđeva",
+      "category": "cat",
+      "image": "../../../assets/images/dog5.jpeg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis tortor in mauris commodo ultricies.",
+      "isUrgent": false
+    },
+    {
+      "title": "Ne može da čeka",
+      "name": "Mac",
+      "gender": "ženka",
+      "age": 1,
+      "city": "Valjevo",
+      "street": "Pasterova",
+      "category": "cat",
+      "image": "../../../assets/images/cat4.jpeg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis tortor in mauris commodo ultricies.",
+      "isUrgent": true
+    },
+    {
+      "title": "Novi vlasnik što pre",
+      "name": "Dzukac",
+      "gender": "mužijak",
+      "age": 6,
+      "city": "Niš",
+      "street": "Durlan",
+      "category": "dog",
+      "image": "../../../assets/images/dog7.jpeg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis tortor in mauris commodo ultricies.",
+      "isUrgent": true
+    }
+  ],
+
+  "shelters": [{
+    "username": "Azil",
+    "email": "azil1@gmail.com",
+    "password": "azil123"
+  }]
+}

@@ -1,0 +1,96 @@
+<div class="container register">
+  <h3 class="text-center left">Registruj se</h3>
+  <form #registerForm="ngForm">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <div class="input-group-text">Ime</div>
+      </div>
+      <input [(ngModel)]="formData.username" 
+             name="username" 
+             type="text" 
+             class="form-control" 
+             placeholder="Ime Organizacije">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <div class="input-group-text">Adresa</div>
+      </div>
+      <input [(ngModel)]="formData.street"
+             name="street" 
+             type="text" 
+             class="form-control" 
+             placeholder="Adresa">
+      <input [(ngModel)]="formData.city" 
+             name="city"
+             type="text" 
+             class="form-control" 
+             placeholder="Grad">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Organizacija</span>
+      </div>
+      <input [(ngModel)]="formData.idNumber" 
+             name="idNumber"
+             type="text" 
+             class="form-control" 
+             placeholder="Matični Broj">
+      <input [(ngModel)]="formData.pib"
+             name="pib" 
+             type="text" 
+             class="form-control" 
+             placeholder="PIB">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Kontakt</span>
+      </div>
+      <input [(ngModel)]="formData.phoneNmb" 
+             name="phoneNmb"
+             type="text" 
+             class="form-control" 
+             placeholder="Telefon">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Email</span>
+      </div>
+      <input [(ngModel)]="formData.email"
+             name="email" 
+             type="email" 
+             class="form-control" 
+             placeholder="Unesite vaš email" 
+             required>
+      <input [(ngModel)]="formData.emailConfirmation"
+             name="emailConfirmation" 
+             type="email" 
+             class="form-control" 
+             placeholder="Potvrdite vaš email" 
+             required>
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Lozinka</span>
+      </div>
+      <input [(ngModel)]="formData.password"
+             name="password" 
+             type="password" 
+             class="form-control" 
+             placeholder="Unesite lozinku" 
+             required>
+      <input [(ngModel)]="formData.passwordConfirmation"
+             name="passwordConfirmation" 
+             type="password"
+             class="form-control" 
+             placeholder="Potvrdite vašu lozinku" 
+             required>
+    </div>
+    <h6 class="text-center">Uslovi korišćenja</h6>
+    <label>
+      <input type="checkbox">Prihvatam
+    </label>
+    <button type="submit" class="btn btn-default" (click)="register()">Registruj se</button>
+  </form>
+
+  <a [routerLink]="['/auth/login']">Već imate nalog?</a>
+</div>
