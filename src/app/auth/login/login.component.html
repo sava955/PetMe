@@ -4,14 +4,13 @@
     <div *ngIf="notifyMessage" class="alert alert-success">
       {{notifyMessage}}
     </div>
-    <div class="md-form form-sm">
-      <i class="fas fa-envelope prefix"></i>
-      <input mdbInputDirective 
-             placeholder="Unesite vaš email" 
-             type="text" 
+    <div class="form-group animate-form">
+      <input type="text" 
              id="email" 
              class="form-control"
-             formControlName="email">
+             formControlName="email"
+             required>
+             <label><i class="fas fa-envelope prefix"></i> Unesite vaš email</label>
              <div *ngIf="isInvalidForm('email')">
                          <div *ngIf="isRequired('email')">
                            Email je neophodan.
@@ -21,19 +20,18 @@
                          </div>
                         </div>
     </div>
-    <div class="md-form form-sm">
-      <i class="fa fa-lock prefix"></i>
-      <input mdbInputDirective 
-             placeholder="Unesite vašu lozinku" 
-             type="password" 
+    <div class="form-group animate-form">
+      <input type="password" 
              id="password" 
              class="form-control"
-             formControlName="password">
+             formControlName="password"
+             required>
+      <label><i class="fa fa-lock prefix"></i> Unesite vašu lozinku</label>       
     </div>
     <div class="form-group form-check">
-      <label class="form-check-label">
+      <!--label class="form-check-label">
         <input class="form-check-input" type="checkbox" name="remember">Zapamti me
-      </label>
+      </label-->
     </div>
     <button [disabled]="!loginForm.valid" class="btn" type="submit">Prijavi se</button>
   </form>

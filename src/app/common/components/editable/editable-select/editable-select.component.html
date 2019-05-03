@@ -1,0 +1,34 @@
+<div [ngStyle]="style" class="editable-component">
+  <select *ngIf="isActiveInput"
+         class="{{className}}" 
+         (keydown.escape)="cancleUpdate()"
+         (keyup.enter)="updateEntity()"
+         [(ngModel)]="entity[entityField]"
+         >
+    <option [selected]="!entity[entityField] === undefined" disabled>----</option>    
+    <option *ngFor="let option of options" [ngValue]="option">{{option}}</option>    
+  </select>
+
+  <span *ngIf="!isActiveInput" class="{{className}} inline"> {{entity[entityField]}} </span>
+  
+  <div class="inline editable-btn">
+      <a *ngIf="!isActiveInput"
+      (click)="isActiveInput = true">
+      <i class="fas fa-edit"></i>
+      Prikaži
+      </a>
+
+      <button *ngIf="isActiveInput"
+      class="btn btn-editable"
+      (click)="updateEntity()">
+      Sačuvaj
+      </button>
+
+      <button *ngIf="isActiveInput"
+      class="btn btn-editable"
+      (click)="cancleUpdate()">
+      Odustani
+      </button>
+  </div>
+  
+</div>

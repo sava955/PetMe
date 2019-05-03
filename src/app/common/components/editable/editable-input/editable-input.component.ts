@@ -1,26 +1,14 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { EditableComponent } from '../editable.component';
 
 @Component({
   selector: 'app-editable-input',
   templateUrl: './editable-input.component.html',
   styleUrls: ['./editable-input.component.scss']
 })
-export class EditableInputComponent implements OnInit {
+export class EditableInputComponent extends EditableComponent {
 
-  @Input() entity: any;
-  @Input() field: string;
-  @Input() className: string;
-  @Output() entityUpdated = new EventEmitter();
-  
-  isActiveInput: boolean = false;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-  updateEntity() {
-    this.entityUpdated.emit({[this.field]: this.entity[this.field]});
-  }
+  @Input() type: string = 'text';
+  @Input() transformView = value => value;
 
 }

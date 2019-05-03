@@ -23,21 +23,30 @@ const shelterSchema = new Schema({
         max: [32, 'Maksimalan broj karaktera je 32'],
         required: 'Unesite lozinku'
     },
-    street: {
+    avatar: {
         type: String
     },
     city: {
-        type: String
+        type: String, lowercase: true, required: true
+    },
+    street: {
+        type: String, lowercase: true, required: true
     },
     idNumber: {
-        type: Number
+        type: String, lowercase: true, required: true
     },
     pib: {
-        type: Number
+        type: String, lowercase: true, required: true
     },
     phoneNmb: {
-        type: Number
+        type: String, lowercase: true, required: true
     },
+    description: {
+        type: String
+    },
+    images: [{
+        type: String
+    }],
     ads: [{
         type: Schema.Types.ObjectId, ref: 'Ad'
     }]

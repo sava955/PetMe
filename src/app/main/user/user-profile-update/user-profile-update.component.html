@@ -1,0 +1,72 @@
+<div *ngIf="user" class="container bootstrap snippet">
+    <div class="row">
+      <div class="col-sm-12 background shadow">
+  
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="card info shadow-lg">
+          <!--left col-->
+          <div class="text-center">
+            <img src="../../../../assets/images/avatar.png" class="avatar" alt="avatar">
+            <span class="username-lg"><app-editable-input [(entity)]="user" [field]="'username'" [className]="'user-username'" (entityUpdated)="updateProfile(user._id, $event)"></app-editable-input></span>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item username-sm"><strong><app-editable-input [(entity)]="user" [field]="'username'" [className]="'user-username'" (entityUpdated)="updateProfile(user._id, $event)"></app-editable-input></strong></li>
+            <li class="list-group-item text-muted"><strong>Podaci</strong></li>
+            <li class="list-group-item"><span
+                class="pull-left text-capitalize"><strong><app-editable-input [(entity)]="user" [field]="'firstName'" [className]="'user-firstname'" (entityUpdated)="updateProfile(user._id, $event)"></app-editable-input></strong></span></li>
+            <li class="list-group-item"><span
+                class="pull-left text-capitalize"><strong><app-editable-input [(entity)]="user" [field]="'lastName'" [className]="'user-lastname'" (entityUpdated)="updateProfile(user._id, $event)"></app-editable-input></strong></span></li>
+            <li class="list-group-item"><span
+                class="pull-left text-capitalize"><strong><app-editable-input [(entity)]="user" [field]="'city'" [className]="'user-city'" (entityUpdated)="updateProfile(user._id, $event)"></app-editable-input></strong></span></li>
+            <li class="list-group-item"><span
+                class="pull-left text-capitalize"><strong><app-editable-input [(entity)]="user" [field]="'country'" [className]="'user-country'" (entityUpdated)="updateProfile(user._id, $event)"></app-editable-input></strong></span></li>
+            <li class="list-group-item"><span class="pull-left"><strong><app-editable-input [(entity)]="user" [field]="'email'" [className]="'user-email'" (entityUpdated)="updateProfile(user._id, $event)"></app-editable-input></strong></span></li>
+            <li class="list-group-item text-center"><a class="btn btn-gradient"
+                routerLink="/main/user/user-profile-edit">Promeni Informacije</a></li>
+          </ul>
+        </div>
+      </div>
+      <!--/col-3-->
+      <div class="col-sm-9">
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#ads">Oglasi <strong
+                class="badge badge-primary">{{user.ads.length}}</strong></a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="ads">
+            <div class="row">
+              <div class="col-md-4 col-6" *ngFor="let ad of user.ads | date:'-createdAt' | paginate: { itemsPerPage: 6, currentPage: p }; let i=index">
+                  <div class="card shadow ads">
+                      <span class="badge urgent">{{ad.isUrgent ? '!' : ''}}</span>
+                      <div class="card-background"></div>
+                      <img class="card-img-top" src="{{ad.image}}" alt="Card image" style="width:100%">
+                      <div class="card-body">
+                        <h6 class="card-subtitle text-capitalize">{{ad.name}} &#183; {{ad.city}}</h6>
+                        <h5 class="card-title text-capitalize">{{ad.title}}</h5>
+                        <p class="card-text">{{ad.gender}} &#183; {{ad.age}}</p>
+                        <div class="card-footer">
+                          <a class="btn btn-gradient float-left" routerLink="../../{{ad._id}}/user-ad-edit"><span>Prikaži</span><i class="fas fa-edit"></i></a>
+                          <button (click)="adDeleteIndex = i" *ngIf="adDeleteIndex !== i"
+                            class="btn btn-gradient btn-delete float-right" type="button"><span>Obriši</span><i class="far fa-trash-alt"></i></button>
+                        </div>
+                        <div *ngIf="adDeleteIndex === i" class="delete-confirm">
+                          <p class="text-muted">Želite li da obrišete ovaj oglas?</p>
+                          <button (click)="deleteAd(ad._id)" class="btn btn-danger float-left" type="button">Da</button>
+                          <button (click)="adDeleteIndex = undefined" class="btn btn-gradient float-right"
+                            type="button">Ne</button>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+            </div>
+            <pagination-controls class="pagination justify-content-center" (pageChange)="p=$event"></pagination-controls>
+          </div>
+          <!--/tab-pane-->
+        </div>
+      </div>
+      <!--/col-9-->
+    </div>
+    <!--/row-->

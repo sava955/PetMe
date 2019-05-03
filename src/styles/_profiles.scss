@@ -1,0 +1,248 @@
+@import 'variables';
+@import '_ad-card.scss';
+
+.container {
+    .background {
+        margin-top: 10vh;
+        background-image: url('../../../../assets/images/background.png');
+        //background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        height: 40vh;
+    }
+    
+    .info {
+        z-index: 1;
+        margin-top: -20vh;
+        border: none;
+    
+        img {
+            width: 100%;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+    
+        .username-lg {
+            font-size: 1.4em;
+            font-weight: 700;
+            padding: 10px;
+        }
+
+        .username-sm {
+            display: none;
+        }
+    
+        .list-group-item {
+            border: none;
+            .btn {
+                border-radius: 20px;
+                color: $white;
+            }
+        }
+    }
+    
+    .tab-content {
+        margin-top: 1.2rem;
+    }
+    
+    .nav-tabs {
+        padding: 15px 0;
+    
+        a {
+            color: $main-text-color;
+            font-size: 1.2em;
+            font-weight: 700;
+            text-decoration: none;
+            padding-right: 20px;
+    
+            &:focus {
+                color: $main-color;
+            }
+        }
+        
+    }
+    
+    #ads {
+    .card {
+        border: none;
+        border-radius: 15px;
+        background: $white;
+        margin-bottom: 15px;
+        overflow: hidden;
+        transition: transform .5s;
+
+        &:hover {
+            transform: scale(1.05, 1.05);
+        }
+
+        .urgent {
+            padding: 10px 10px 30px 30px;
+            font-size: 22px;
+            position: absolute;
+            right: 0;
+            color: $white;
+            font-weight: 700;
+            z-index: 2;
+            background: $gradient;
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+        }
+
+        .card-background {
+            position: absolute;
+            top: 0;
+            height: 150px;
+            width: 100%;
+            z-index: 1;
+            background: linear-gradient(to bottom, transparent, transparent, transparent, rgba(4, 133, 169, 0.7));
+        }
+
+        .card-img-top {
+            height: 150px;
+            z-index: 0;
+        }
+
+        .card-body {
+            margin-top: 10px;
+            padding: 10px;
+            z-index: 1;
+
+            .card-subtitle {
+                color: $main-color;
+                font-weight: 600;
+            }
+            .card-title{
+                color: $main-text-color;
+                font-weight: 700;
+            }
+        }
+
+        .card-footer {
+            padding: 5px;
+            border: none;
+            background: transparent;
+
+            .btn {
+                i {
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        .delete-confirm {
+            margin-top: 2rem;
+            padding: 5px;
+
+            .btn {
+                margin-top: 10px;
+                padding: 10px 20px;
+            }
+        }
+    }
+        
+    
+    }
+    
+    .btn {
+        border: none;
+        color: $white;
+    }
+
+    @include lg {
+        .info {
+            ul {
+                font-size: 14px;
+
+                .btn {
+                    font-size: 12px;
+                }
+            }   
+        }
+
+        .ads {
+            .btn {
+                font-size: 12px;
+
+                i {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @include md {
+        .info {
+            ul {
+                font-size: 12px;
+
+                .btn {
+                    display: none;
+                }
+            }
+        }
+
+        .ads {
+            .btn {
+                span {
+                    display: none;
+                }
+
+                i {
+                    display: block;
+                }
+            }
+
+            .delete-confirm {
+                .btn {
+                    font-size: 12px;
+                    padding: 5px 10px !important;
+                }
+            }
+        }
+    }
+    
+    @include sm {
+        margin-top: 15vh;
+
+        .background {
+            display: none;
+        }
+    
+        .info {
+            display: inline;
+    
+            .text-center {
+                width: 40%;
+                float: left;
+                padding-right: 20px;
+
+                .username-lg {
+                    display: none;
+                }
+            }
+    
+            ul {
+                font-size: 14px;
+                width: 60%;
+                float: right;
+
+                .username-sm {
+                    font-size: 22px;
+                    display: block;
+                }
+                .list-group-item {
+                    padding: 0;
+                    float: left;
+
+                    .btn {
+                        display: none;
+                    }
+                }
+            }
+
+        }
+
+        .nav-tabs {
+            font-size: 14px;
+        }
+    }
+}
+

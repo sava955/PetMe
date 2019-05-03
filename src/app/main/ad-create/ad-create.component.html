@@ -1,0 +1,137 @@
+<div class="container">
+    <h3 class="title text-capitalize">novi oglas</h3>
+    <form #adForm="ngForm">
+    <div class="row">
+      <div class="col-md-6">
+          <div class="input-group mb-3 form-group">
+              <!--input
+              (click)="handleImageChange()"
+              name="image" 
+              type="file"
+              id="image"
+              class="form-control" 
+              placeholder="Slika"--> 
+              <label class="image-upload-container btn">
+                <span>Odaberite Sliku</span>
+                  <input (click)="handleImageChange()"
+                  name="image" 
+                  type="file"
+                  id="image"
+                  class="form-control image-input">
+              </label>
+          </div>
+          <div class="image">
+              <i class="far fa-image"></i>
+          </div>
+      </div>
+      <div class="col-md-6">
+          <div class="input-group mb-3 form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Naslov</span>
+              </div>
+              <input [(ngModel)]="newAd.title"
+                     name="title" 
+                     type="text" 
+                     id="title" 
+                     class="form-control" 
+                     placeholder="Naslov"
+                     required>
+              
+            </div>
+            <div class="input-group mb-3 form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Podaci</span>
+              </div>
+              <input [(ngModel)]="newAd.name"
+                     name="name"
+                     type="text" 
+                     id="name" 
+                     class="form-control" 
+                     placeholder="Ime životinje"
+                     required>
+              <select [(ngModel)]="newAd.category" name="category" class="custom-select col-md-2">
+                <option *ngFor="let category of adCategories">{{category}}</option>
+              </select>
+              <select [(ngModel)]="newAd.gender" name="gender" class="custom-select col-md-2">
+                <option *ngFor="let gender of adGender">{{gender}}</option>
+              </select>
+              <input [(ngModel)]="newAd.age"
+                     name="age"
+                     type="text" 
+                     id="age" 
+                     class="form-control" 
+                     placeholder="Starost"
+                     required>
+            </div>
+            <div class="input-group mb-3 form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Mesto</span>
+              </div>
+              <input [(ngModel)]="newAd.city"
+                     name="city" 
+                     type="text"
+                     id="city" 
+                     class="form-control" 
+                     placeholder="Grad">
+              <input [(ngModel)]="newAd.street"
+                     name="street" 
+                     type="text"
+                     id="street"
+                     class="form-control" 
+                     placeholder="Adresa">
+            </div>
+            <!--app-image-upload (imageUploaded)="handleImageUpload($event)"
+                              (imageError)="handleImageError($event)">
+                            </app-image-upload--> 
+            <div class="input-group mb-3 form-group">
+              <textarea [(ngModel)]="newAd.description"
+                        name="description"
+                        class="form-control"
+                        id="description"
+                        rows="4" 
+                        cols="70" 
+                        placeholder="Više informacija o životinji">
+              </textarea>
+            </div>
+            <div class="input-group mb-3 form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Kontakt</span>
+              </div>
+              <input [(ngModel)]="newAd.phone"
+                     name="phone" 
+                     type="text" 
+                     id="phone" 
+                     class="form-control" 
+                     placeholder="Telefon"
+                     required>
+              <input [(ngModel)]="newAd.email"
+                     name="email" 
+                     type="email" 
+                     id="email" 
+                     class="form-control" 
+                     placeholder="Email"
+                     required>
+              
+            </div>
+            <br>
+            <h6 class="text-center">Uslovi korišćenja</h6>
+            <label>
+              <input [(ngModel)]="newAd.isUrgent" 
+                     type="checkbox"
+                     id="urgent"
+                     name="isUrgent">Hitno
+            </label>
+            <button (click)="createAd()" 
+                    [disabled]="!adForm.form.valid"
+                    type="button" 
+                    class="btn btn-default">Krejiraj Oglas</button>
+      </div>
+    </div>
+    </form>
+    
+  <div *ngIf="errors.length > 0">
+    <p *ngFor="let error of errors">
+      {{error.detail}}
+    </p>
+  </div>
+  </div>

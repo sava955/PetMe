@@ -1,22 +1,36 @@
-section {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100vh;
+@import 'variables';
     
-    .img-responsive {
-      width: 200px;
-      height: auto;
-      margin: 10px;
-      z-index: 1;
-    }
-  
-    #curve {
-      position: absolute;
-      top: 0;
-      right: 0;
-      z-index: -1;
-    }
+  :host {
+    .container-fluid {
+      position: relative;
+
+      .img-responsive {
+        width: 200px;
+        height: auto;
+        margin: 10px;
+        z-index: 1;
+      }
     
+      #curve {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+      }
+
+      @include sm {
+        a {
+          img {
+            width: 150px;
+          }
+          
+        }
+      }
+    }
   }
+
+    
+
+    
+  
+  

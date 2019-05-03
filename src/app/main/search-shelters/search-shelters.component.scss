@@ -1,0 +1,58 @@
+@import 'variables';
+
+.form-control {
+    width: 200px;
+
+    @include sm {
+        width: 100%;
+    }
+}
+
+#search-shelters {
+
+    .form-control {
+       box-shadow: none;
+    }
+
+    label {
+        @include sm {
+            font-weight: 10px;
+        }
+    }
+
+    .dropdown-menu {
+        width: 200px;
+
+        @include sm {
+            width: 100%;
+        }
+    
+        .dropdown-item {
+            background: $white;
+            text-transform: capitalize;
+            color: $main-color;
+
+            img {
+                padding-right: 10px;
+            }
+    
+            &:focus, &:active, &:hover {
+                background: $main-color;
+                color: $white;
+    
+                a {
+                    color: $white;
+                }
+            }
+    
+            a {
+                text-decoration: none;
+                background: transparent;
+                width: 200px;
+            }
+        }
+        
+    }
+}
+
+

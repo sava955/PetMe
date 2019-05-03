@@ -1,47 +1,105 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'variables';
 @import 'ad-detail';
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 @import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
 html, body, p {
     color: $main-text-color;
+    font-family: 'Roboto', sans-serif !important;
 }
 
-.register {
+.animate-form {
+    position: relative;
 
-    .title {
-        padding-bottom: 20px;
-    }
-
-    .input-group-text {
-        color: $white;
-        background: $gradient;
-    }
-
-    .btn {
-        width: 100%;
-        margin: auto;
-        background: $gradient;
-        color: $white;
+    .form-control {
+        padding: 10px 0;
         border: none;
-        border-radius: 20px;
-        padding: 10px;
+        box-shadow: none;
+        outline: none !important;
+        border-radius: 0%;
+        border-bottom: 2px solid #999;
+
+        &:focus ~ label,
+        &:valid ~ label {
+            /*top: 20;*/
+            left: 0;
+            top: -10px;
+            color: $main-color;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        &:focus {
+            border-bottom: 2px solid $main-color !important;
+        }
+    }
+    
+    label {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        color: #999;
+        pointer-events: none;
+        transition: .5s;
+        pointer-events: none;
+
+        
+    }
+}
+
+
+.nav-link {
+    color: $main-text-color;
+}
+
+.btn-gradient {
+    background: $gradient;
+    color: $white;
+    border: none;
+
+    &:hover {
+        background: $gradient-hover;
+    }
+}
+
+.pagination {
+    @include sm {
+        margin-bottom: 10vh;
+        font-size: 10px;
+        padding: 0;
     }
 }
 
 .inline {
     display: inline-block;
+    margin-left: 5px;
 }
 
 .editable-component {
-    a {
-        &editable-btn {
-            background: transparent;
-            
+
+    .editable-btn {
+        background: transparent;
+
+        a {
             i {
-                font-size: 20px;
+                font-size: 16px;
+                color: $main-color;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .btn-editable {
+            border: none;
+            background: $gradient;
+            color: $white;
+            padding: 5px 10px;
+            margin-left: 5px;
+
+            &:hover {
+                cursor: pointer;
             }
         }
     }

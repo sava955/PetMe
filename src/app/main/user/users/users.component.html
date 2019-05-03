@@ -1,0 +1,57 @@
+<div *ngIf="user" class="container bootstrap snippet">
+  <div class="row">
+    <div class="col-sm-12 background shadow">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3 col-4">
+      <div class="card info shadow-lg">
+        <!--left col-->
+        <div class="text-center">
+          <img src="../../../../assets/images/avatar.png" class="avatar" alt="avatar">
+          <span class="username-lg">{{user.username}}</span>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item text-muted"><strong>Podaci</strong></li>
+          <li class="list-group-item username-sm"><strong>{{user.username}}</strong></li>
+          <li class="list-group-item"><span
+              class="pull-left text-capitalize"><strong>{{user.firstName + ' ' + user.lastName}}</strong></span> </li>
+          <li class="list-group-item"><span
+              class="pull-left text-capitalize"><strong>{{user.city + ', ' + user.country}}</strong></span></li>
+          <li class="list-group-item"><span class="pull-left"><strong>{{user.email}}</strong></span></li>
+        </ul>
+      </div>
+    </div>
+    <!--/col-3-->
+    <div class="col-sm-9 col-8">
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Oglasi <strong
+              class="badge badge-primary">{{user.ads.length}}</strong></a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="home">
+          <div class="row">
+              <div class="col-md-4" *ngFor="let ad of user.ads | date:'-createdAt' | paginate: { itemsPerPage: 6, currentPage: p }">
+                  <a routerLink="/main/{{ad._id}}">
+                    <div class="card shadow ads">
+                      <span class="badge urgent">{{ad.isUrgent ? '!' : ''}}</span>
+                      <div class="card-background"></div>
+                      <img class="card-img-top" src="{{ad.image}}" alt="Card image" style="width:100%">
+                      <div class="card-body">
+                        <h6 class="card-subtitle text-capitalize">{{ad.name}} &#183; {{ad.city}}</h6>
+                        <h5 class="card-title text-capitalize">{{ad.title}}</h5>
+                        <p class="card-text">{{ad.gender}} &#183; {{ad.age}}</p>
+                      </div>
+                    </div>
+                  </a>
+              </div>
+          </div>
+          <pagination-controls class="pagination justify-content-center" (pageChange)="p=$event"></pagination-controls>
+        </div>
+        <!--/tab-pane-->
+      </div>
+    </div>
+    <!--/col-9-->
+  </div>
+  <!--/row-->

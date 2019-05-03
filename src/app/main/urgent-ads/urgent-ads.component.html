@@ -1,0 +1,25 @@
+<owl-carousel-o [options]="customOptions" #owlCar>
+
+  <ng-container *ngFor="let ad of ads | urgent | date:'-createdAt'">
+    <ng-template carouselSlide [id]="ad._id">
+      <a routerLink="/main/{{ad._id}}">
+        <div class="row shadow">
+            <div class="col-md-6 col-6">
+              <img [src]="ad.image" [alt]="ad.image" [title]="ad.image">
+            </div>
+            <div class="col-md-6 col-6">
+              <h6 class="card-subtitle text-capitalize">{{ad.name}} &#183; {{ad.city}}</h6>
+              <h5 class="title">{{ad.title}}</h5>
+              <h6 class="card-text">{{ad.gender}} &#183; {{ad.age}}</h6>
+            </div>
+          </div>
+      </a>
+    </ng-template>
+  </ng-container>
+
+</owl-carousel-o>
+
+<div class="d-flex justify-content-center control-btn">
+  <a class="btn btn-gradient rounded-circle left-btn shadow" (click)="owlCar.prev()"><i class="fas fa-chevron-left"></i></a>
+  <a class="btn btn-gradient rounded-circle right-btn shadow" (click)="owlCar.next()"><i class="fas fa-chevron-right"></i></a>
+</div>

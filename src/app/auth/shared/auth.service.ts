@@ -34,6 +34,10 @@ export class AuthService {
     return (moment.unix(this.decodedToken.exp));
   }
 
+  public getUser(): Observable<any> {
+    return this.http.get('/api/v1/user');
+  }
+
   public getShelter(): Observable<any> {
     return this.http.get('/api/v1/shelter');
   }
@@ -76,6 +80,18 @@ export class AuthService {
 
   public getUsername(): string {
     return this.decodedToken.username;
+  }
+
+  public getAvatar(): string {
+    return this.decodedToken.avatar;
+  }
+
+  public getUserId(): string {
+    return this.decodedToken.userId;
+  }
+
+  public getShelterId(): string {
+    return this.decodedToken.shelterId;
   }
 
 }

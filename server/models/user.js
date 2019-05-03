@@ -29,8 +29,13 @@ const userSchema = new Schema({
         required: 'Unesite lozinku'
     },
     
-    location: {
-        type: String
+    city: {
+        type: String,
+        required: 'Unesite vašu lokaciju'
+    },
+    country: {
+        type: String,
+        required: 'Unesite vašu lokaciju'
     },
     ads: [{
         type: Schema.Types.ObjectId, ref: 'Ad'

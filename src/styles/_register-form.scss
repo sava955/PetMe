@@ -1,0 +1,42 @@
+@import 'variables';
+
+.container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    transform: translateY(0%);
+
+    .title {
+        padding-bottom: 20px;
+    }
+
+    .input-group-text {
+        color: $white;
+        background: $gradient;
+    }
+
+
+    .btn {
+        width: 100%;
+        margin: auto;
+        background: $gradient;
+        color: $white;
+        border: none;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    @include md {
+        width: 100%;
+    }
+
+    @include sm {
+        .input-group-text {
+            padding: 0;
+            font-size: 12px;
+        }
+        .form-control {
+            font-size: 12px;
+        }
+    }
+}

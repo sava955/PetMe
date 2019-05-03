@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../shared/auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { subscribeOn } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -44,22 +45,23 @@ export class LoginComponent implements OnInit {
   }
 
   isRequired(fieldName): boolean {
-    return this.loginForm.controls[fieldName].errors.required
+    return this.loginForm.controls[fieldName].errors.required;
   }
 
   login() {
-
-    this.auth.loginUser(this.loginForm.value).subscribe(
+      
+      this.auth.loginUser(this.loginForm.value).subscribe(
       (token) => {
-        this.router.navigate(['/ads', { registered: 'success' }]);
+        this.router.navigate(['/main', { registered: 'success' }]);
       },
       (errorResponse) => {
         this.errors = errorResponse.error.errors;
 
       });
+      
       this.auth.loginShelter(this.loginForm.value).subscribe(
         (token) => {
-          this.router.navigate(['/ads', { registered: 'success' }]);
+          this.router.navigate(['/main', { registered: 'success' }]);
         },
         (errorResponse) => {
           this.errors = errorResponse.error.errors;

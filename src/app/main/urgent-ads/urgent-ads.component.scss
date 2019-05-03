@@ -1,0 +1,78 @@
+@import 'variables';
+
+    a {
+        &:hover {
+            text-decoration: none;
+        }
+
+        @include sm {
+            max-width: 100%;
+        }
+
+        .row {
+            margin: 10px;
+            background: linear-gradient(to right, $main-color, $white, $white);
+            border-radius: 10px;
+        
+            .col-md-6 {
+                max-height: 150px;
+            }
+        
+            img {
+                width: 150px;
+                height: 150px;
+
+                @include sm {
+                    max-width: 120px;
+                }
+            }
+        
+            .card-subtitle {
+                font-weight: 600;
+                margin-top: 5px;
+                color: $main-color;
+            }
+        
+            .title {
+                font-weight: 700;
+                color: $main-text-color;
+            }
+    
+            .card-text {
+                color: $main-text-color;
+
+                @include sm {
+                    display: none;
+                }
+            }
+        
+        }
+    }
+    
+    .control-btn {
+        
+        padding: 20px;
+
+        .btn {
+
+            border: none;
+    
+            .fas {
+                color: $white;
+                font-size: 22px;
+                padding: 5px;
+            }
+         }
+        
+        .left-btn {
+            margin-right: 10px;
+        }
+    
+        .right-btn {
+            margin-left: 10px;
+        }
+    }
+    
+
+        
+    
