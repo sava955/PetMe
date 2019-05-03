@@ -19,11 +19,6 @@
              class="form-control" 
              placeholder="Prezime"
              required>
-      <select class="custom-select col-md-2">
-        <option selected>Pol</option>
-        <option value="Muški">Muški</option>
-        <option value="Ženski">Ženski</option>
-      </select>
     </div>
     <div class="input-group mb-3 form-group">
       <div class="input-group-prepend">
@@ -39,33 +34,22 @@
     </div>
     <div class="input-group mb-3 form-group">
       <div class="input-group-prepend">
-        <span class="input-group-text">Datum rođenja</span>
+        <span class="input-group-text">Lokacija</span>
       </div>
-      <select class="custom-select custom-select col-md-2">
-        <option selected>D/D</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
-      <select class="custom-select custom-select col-md-2">
-        <option selected>M/M</option>
-        <option value="Januar">Januar</option>
-        <option value="Februar">Februar</option>
-        <option value="Mart">Mart</option>
-      </select>
-      <select class="custom-select custom-select col-md-2">
-        <option selected>G/G</option>
-        <option value="1990">1990</option>
-        <option value="1991">1991</option>
-        <option value="1992">1992</option>
-      </select>
-    </div>
-    <div class="input-group mb-3 form-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text">Mesto</span>
-      </div>
-      <input type="text" class="form-control" placeholder="Država">
-      <input type="text" class="form-control" placeholder="Grad">
+      <input [(ngModel)]="formData.city" 
+             name="city"
+             type="text"
+             id="city" 
+             class="form-control" 
+             placeholder="Grad"
+             required>
+      <input [(ngModel)]="formData.country" 
+             name="country"
+             type="text"
+             id="country" 
+             class="form-control" 
+             placeholder="Država"
+             required>
     </div>
     <div class="input-group mb-3 form-group">
       <div class="input-group-prepend">

@@ -1,0 +1,19 @@
+@import 'variables';
+
+input {
+    display: none;
+}
+
+.img-preview-container {
+    background-color: $main-color;
+    color: $white;
+    position: relative;
+    margin: 3rem;
+
+    .img-preview {
+        background: center center no-repeat;
+        background-size: contain;
+        height: 200px;
+        width: 200px;
+    }
+}

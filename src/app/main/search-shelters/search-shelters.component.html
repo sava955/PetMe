@@ -1,0 +1,19 @@
+<div id="search-shelters">
+  <div class="form-group animate-form">
+      <input name="username" 
+             type="text" 
+             class="typeahead-http form-control" 
+             [resultTemplate]="rt" 
+             [inputFormatter]="formatter" 
+             [(ngModel)]="model" 
+             [ngbTypeahead]="search"
+             required/>
+      <label>Pretraga azila</label>
+    </div>
+    <ng-template #rt let-r="result" let-t="term">
+      <a routerLink="/main/shelter/{{r._id}}">
+        <img [src]="r['avatar']" class="mr-1" style="width: 40px">
+        <ngb-highlight [result]="r.username" [term]="t"></ngb-highlight>
+      </a>
+    </ng-template>
+</div>    

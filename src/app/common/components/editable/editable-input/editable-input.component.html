@@ -1,11 +1,13 @@
-<div class="editable-component">
+<div [ngStyle]="style" class="editable-component">
   <input *ngIf="isActiveInput"
          class="{{className}}" 
-         type="text"
-         [(ngModel)]="entity[field]"
-         [value]="entity[field]"
+         type="type"
+         (keydown.escape)="cancleUpdate()"
+         (keyup.enter)="updateEntity()"
+         [(ngModel)]="entity[entityField]"
+         [value]="entity[entityField]"
          >
-  <span *ngIf="!isActiveInput" class="{{className}} inline"> {{entity[field]}} </span>
+  <span *ngIf="!isActiveInput" class="{{className}} inline"> {{transformView(entity[entityField])}} </span>
   
   <div class="inline editable-btn">
       <a *ngIf="!isActiveInput"
@@ -15,12 +17,14 @@
       </a>
 
       <button *ngIf="isActiveInput"
-      (click)="updateEntity($event)">
+      class="btn btn-editable"
+      (click)="updateEntity()">
       Sačuvaj
       </button>
 
       <button *ngIf="isActiveInput"
-      (click)="isActiveInput = false">
+      class="btn btn-editable"
+      (click)="cancleUpdate()">
       Odustani
       </button>
   </div>

@@ -1,0 +1,120 @@
+<section id="adDetails" *ngIf="ad" class="container">
+  <div class="upper-section">
+    <div class="row">
+      <div class="col-md-6 shadow card">
+        <a *ngIf="ad.shelter" routerLink="/main/shelter/shelter-profile">
+          <img src="{{ad.shelter.avatar}}" alt="" class="avatar rounded-circle"> 
+          <span class="avatar-name">{{ad.shelter.username}}</span>
+        </a>
+          <!--ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery-->
+          <img src="{{ad.image}}" class="img-responsive" alt="">
+      </div>
+      <div class="col-md-6 shadow">
+        <div class="ad">
+          <div id="urgent">
+              <h5 class="ad-urgent text-capitalize {{ad.name}}">{{ad.isUrgent ? 'Hitno!' : ''}}</h5>
+          </div>
+          <app-editable-select 
+          [(entity)]="ad"
+          [field]="'isUrgent'"
+          [options]="[true, false]"
+          [style]="{'display': 'inline-block'}"
+          [className]="'ad-isUrgent'"
+          (entityUpdated)="updateAd(ad._id, $event)">
+          </app-editable-select>
+          <app-editable-input 
+          [(entity)]="ad"
+          [field]="'title'"
+          [className]="'ad-title'"
+          (entityUpdated)="updateAd(ad._id, $event)">
+          </app-editable-input>
+          <app-editable-input 
+          [(entity)]="ad"
+          [field]="'name'"
+          [className]="'ad-name'"
+          [style]="{'text-transform': 'capitalize'}"
+          (entityUpdated)="updateAd(ad._id, $event)">
+          </app-editable-input>
+          <app-editable-input 
+            [(entity)]="ad"
+            [field]="'city'"
+            [transformView]="transformLocation"
+            [style]="{'display': 'inline-block'}"
+            [className]="'ad-city'"
+            (entityUpdated)="updateAd(ad._id, $event)">
+            </app-editable-input>
+          <app-editable-input 
+            [(entity)]="ad"
+            [field]="'street'"
+            [transformView]="transformLocation"
+            [style]="{'display': 'inline-block', 'margin-left': '10px'}"
+            [className]="'ad-city'"
+            (entityUpdated)="updateAd(ad._id, $event)">
+            </app-editable-input>
+          <div class="ad-info">
+              <i class="fa fa-{{ad.category}}"></i>
+              <app-editable-select 
+              [(entity)]="ad"
+              [field]="'category'"
+              [options]="adCategories"
+              [style]="{'display': 'inline-block'}"
+              [className]="'ad-category'"
+              (entityUpdated)="updateAd(ad._id, $event)">
+              </app-editable-select>
+              <i class="fa fa-calendar"></i>
+              <app-editable-input 
+            [(entity)]="ad"
+            [field]="'age'"
+            [style]="{'display': 'inline-block'}"
+            [className]="'ad-age'"
+            (entityUpdated)="updateAd(ad._id, $event)">
+            </app-editable-input>
+            <app-editable-select 
+              [(entity)]="ad"
+              [field]="'gender'"
+              [options]="adGender"
+              [style]="{'display': 'inline-block', 'margin-left': '20px'}"
+              [className]="'ad-gender'"
+              (entityUpdated)="updateAd(ad._id, $event)">
+              </app-editable-select>
+          </div>
+        <app-editable-textarea
+        [(entity)]="ad"
+        [field]="'description'"
+        [className]="'ad-description'"
+        [rows]="'6'"
+        [cols]="'50'"
+        (entityUpdated)="updateAd(ad._id, $event)">
+        </app-editable-textarea>
+          <hr>
+            <span><i class="fas fa-phone"></i>Telefon: </span>
+            <app-editable-input 
+            [(entity)]="ad"
+            [field]="'phone'"
+            [style]="{'display': 'inline-block'}"
+            [className]="'ad-phone'"
+            (entityUpdated)="updateAd(ad._id, $event)">
+            </app-editable-input>
+            <span><i class="fas fa-envelope"></i>Email: </span>
+            <app-editable-input 
+            [(entity)]="ad"
+            [field]="'email'"
+            [style]="{'display': 'inline-block'}"
+            [className]="'ad-email'"
+            (entityUpdated)="updateAd(ad._id, $event)">
+            </app-editable-input>
+        </div>
+        <app-map [locationSubject]="locationSubject" [location]="ad.city + ' '+ ad.street"></app-map>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="map-section">
+    <div class="row">
+      <div class="col-md-8">
+        
+      </div>
+    </div>
+  </div>
+</section>
+

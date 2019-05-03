@@ -1,17 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
-//import { HeaderComponent } from './common/header/header.component';
-import { AdsComponent } from './ads/ads.component';
-import { AdsModule } from './ads/ads.module';
+import { MainModule} from './main/main.module';
 import { AuthModule } from './auth/auth.module';
 
 const routes: Routes = [
-    {path: '', redirectTo: '/ads', pathMatch: 'full'}
-  
+  {path: '', redirectTo: 'main', pathMatch: 'full'}
 ]
 
 @NgModule({
@@ -20,9 +17,10 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    AdsModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(routes),
-    MDBBootstrapModule.forRoot(),
+    NgbModule,
+    MainModule,
     AuthModule
   ],
   providers: [],

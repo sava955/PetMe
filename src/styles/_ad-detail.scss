@@ -1,26 +1,43 @@
 
 #adDetails {
-    margin-top: 7%;
+    margin-top: 15vh;
+    
+    .card {
+        border: none;
 
-    img {
-        width: 500px;
-        height: auto;
-    }
+        a {
+            color: $main-text-color;
+            
+            &:hover {
+                color: $main-color;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
 
-    #avatar {
-        width: 50px;
-        height: 50px;
+        .img-responsive {
+            width: 100%;
+            height: auto;
+            padding: 20px 0;
+        }
+    
+        .avatar {
+            width: 50px;
+            height: 50px;
+        }
+    
+        .avatar-name {
+            margin-left: 10px;
+            font-size: 22px;
+            font-weight: 700;
+        }
+    
+        ngx-gallery {
+            margin-top: 15px;
+            max-width: 100%;
+        }
     }
-
-    #avatar-name {
-        margin-left: 10px;
-        font-size: 22px;
-        font-weight: 700;
-    }
-
-    ngx-gallery {
-        margin-top: 15px;
-    }
+    
 
     .ad {
 
@@ -38,20 +55,46 @@
 
         &-title {
             margin-bottom: 5px;
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 400;
         }
-    
+
+        &-name {
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        &-city {
+            margin-bottom: 5px;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .ad-info {
+            
+            .ad-category, .ad-age , .ad-gender {
+                font-weight: 400;
+                margin-left: 10px;
+                padding-right: 10px;
+            }
+
+            .fa-calendar {
+                margin-left: 20px;
+            }
+
+            span {
+                font-weight: 400;
+            }
+
+        }
+
         span {
-            margin-right: 30px;
+            margin-right: 20px;
         }
     
         i {
             color: $main-color;
         }
     
-        .btn {
-            background: $gradient;
-        }
     }
 }

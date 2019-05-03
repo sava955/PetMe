@@ -2,6 +2,7 @@
 
 #accType {
     transform: translateY(10%);
+    position: relative;
 
     .col-md-4 {
         transition: transform 1s;
@@ -30,5 +31,15 @@
         cursor: pointer;
       }
 
-      
+    @include sm {
+      .col-md-4 {
+        margin-top: 20px;
+
+        .card-body {
+          span {
+            font-size: 4em;
+          }
+        }
+      }
+    } 
   }

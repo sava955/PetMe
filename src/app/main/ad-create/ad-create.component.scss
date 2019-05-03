@@ -1,0 +1,63 @@
+@import 'variables';
+
+.container {
+    /*width: 50%;
+    margin: auto;
+    padding: 20px;*/
+    transform: translateY(15%);
+
+    .title {
+        padding-bottom: 20px;
+        font-weight: 700;
+    }
+
+    .image-input {
+        display: none;
+    }
+    
+    .img-preview-container {
+        background-color: $main-color;
+        color: $white;
+        position: relative;
+        margin: 3rem;
+    }
+    
+    .image {
+        width: 100%;
+        text-align: center;
+
+        .fa-image {
+            font-size: 500px;
+            color: $main-color;
+        }
+    }
+
+    .input-group-text {
+        color: $white;
+        background: $gradient;
+    }
+
+    .btn {
+        width: 100%;
+        margin: auto;
+        background: $gradient;
+        color: $white;
+        border: none;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    @include md {
+        width: 100%;
+    }
+
+    @include sm {
+        .input-group-text {
+            padding: 0;
+            font-size: 12px;
+        }
+        .form-control {
+            font-size: 12px;
+        }
+    }
+}

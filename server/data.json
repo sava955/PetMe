@@ -1,94 +1,116 @@
 {
-    "ads": [
+  "ads": [
     {
       "title": "Potreban novi vlasnik",
       "name": "Kuca",
       "gender": "mužijak",
-      "age": 4,
+      "age": "4 godine",
       "city": "Beograd",
       "street": "Ustanička",
       "category": "dog",
       "image": "../../../assets/images/dog4.jpeg",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis tortor in mauris commodo ultricies.",
-      "isUrgent": false
+      "isUrgent": false,
+      "phone": "0643215266",
+      "email": "azil1@gmail.com"
     },
     {
       "title": "Hitno podreban novi dom",
       "name": "Ker",
       "gender": "mužijak",
-      "age": 2,
+      "age": "2 meseca",
       "city": "Beograd",
       "street": "Dorćol",
       "category": "dog",
       "image": "../../../assets/images/dog6.jpeg",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis tortor in mauris commodo ultricies.",
-      "isUrgent": true
+      "isUrgent": true,
+      "phone": "0643215266",
+      "email": "azil1@gmail.com"
     },
     {
-      "title": "Što pre udomiti",
+      "title": "Što pre udomiti mačku",
       "name": "Tom",
       "gender": "mužijak",
-      "age": 2,
+      "age": "dve godine star",
       "city": "Novi Sad",
       "street": "Detelinara",
       "category": "cat",
-      "image": "../../../assets/images/dog7.jpeg",
+      "image": "../../../assets/images/cat7.jpeg",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis tortor in mauris commodo ultricies.",
-      "isUrgent": true
+      "isUrgent": true,
+      "phone": "0643215266",
+      "email": "azil1@gmail.com"
     },
     {
       "title": "U potrazi za kućom",
       "name": "Milos",
       "gender": "ženka",
-      "age": 5,
+      "age": "5 godina stara",
       "city": "Užice",
       "street": "Jug Bogdanova",
       "category": "dog",
       "image": "../../../assets/images/dog3.jpeg",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis tortor in mauris commodo ultricies.",
-      "isUrgent": false
+      "isUrgent": false,
+      "phone": "0643215266",
+      "email": "azil1@gmail.com"
     },
     {
-      "title": "Napušten pas",
+      "title": "Napuštena mačka",
       "name": "Marko",
       "gender": "ženka",
-      "age": 3,
+      "age": "4 meseca",
       "city": "Valjevo",
       "street": "Karađorđeva",
       "category": "cat",
-      "image": "../../../assets/images/dog5.jpeg",
+      "image": "../../../assets/images/cat5.jpeg",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis tortor in mauris commodo ultricies.",
-      "isUrgent": false
+      "isUrgent": false,
+      "phone": "0643215266",
+      "email": "azil1@gmail.com"
     },
     {
       "title": "Ne može da čeka",
       "name": "Mac",
       "gender": "ženka",
-      "age": 1,
+      "age": "mesec dana stara",
       "city": "Valjevo",
       "street": "Pasterova",
       "category": "cat",
       "image": "../../../assets/images/cat4.jpeg",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis tortor in mauris commodo ultricies.",
-      "isUrgent": true
+      "isUrgent": true,
+      "phone": "0643215266",
+      "email": "azil1@gmail.com"
     },
     {
       "title": "Novi vlasnik što pre",
       "name": "Dzukac",
       "gender": "mužijak",
-      "age": 6,
+      "age": "6 godina",
       "city": "Niš",
       "street": "Durlan",
       "category": "dog",
       "image": "../../../assets/images/dog7.jpeg",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis tortor in mauris commodo ultricies.",
-      "isUrgent": true
+      "isUrgent": true,
+      "phone": "0643215266",
+      "email": "azil1@gmail.com"
     }
   ],
 
   "shelters": [{
     "username": "Azil",
     "email": "azil1@gmail.com",
-    "password": "azil123"
+    "password": "azil123",
+    "avatar": "../../../assets/images/avatar.png",
+    "city": "Beograd",
+    "street": "Mali Mokri Lug",
+    "idNumber": "0343223664",
+    "pib": "01231",
+    "phoneNmb": "011-222-333",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis tortor in mauris commodo ultricies.",
+    "images": ["../../../assets/images/dog7.jpeg", "../../../assets/images/cat4.jpeg"]
   }]
 }

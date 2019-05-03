@@ -5,12 +5,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 
 export class SearchFilterPipe implements PipeTransform{
-    transform(shelters: any[], term: any): any {
-        if (term === undefined) return shelters;
+    transform(ads: any[], term: any): any {
+        if (term === undefined) return ads;
 
-        return shelters.filter(function(shelter) {
-            return shelter.username.toLowerCase().includes(term.toLowerCase());
-        }) 
+        return ads.filter(function(ad) {
+            return ad.city.toLowerCase().includes(term.toLowerCase());
+        }); 
     }
 
 }
